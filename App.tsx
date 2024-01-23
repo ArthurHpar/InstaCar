@@ -1,12 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { bg } from "./styles";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { backgroundColor, position, topRightBottomLeft, width, height } from "./styles";
+import TabBar from "./src/layout/TabBar";
 
 const App = () => {
   return (
-    <View style={[bg.gray950]}>
-      <Text>Olá, mundo!</Text>
-    </View>
+    <SafeAreaView style={[width.wfull, height.hfull]}>
+      <TabBar></TabBar>
+      <Text>ola mundo</Text>
+    </SafeAreaView>
   );
 };
 
