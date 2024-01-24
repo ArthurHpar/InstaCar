@@ -9,10 +9,12 @@ import Card from "../components/card";
 const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
-  return  <>
-            <Text>ola mundo 23456</Text>
-            <Card />
-          </>;
+  return (
+    <>
+      <Text>ola mundo 23456</Text>
+      <Card />
+    </>
+  );
 };
 
 export default HomeScreen;

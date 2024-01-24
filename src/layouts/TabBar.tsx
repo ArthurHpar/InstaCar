@@ -1,5 +1,4 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, Button } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faBolt,
@@ -18,9 +17,7 @@ import {
   display,
   flexDirection,
   justifyContent,
-  alignItems,
-  textColor,
-  teste
+  alignItems
 } from "../styles";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../views/HomeScreen";
@@ -37,7 +34,7 @@ const TabBar = () => {
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarStyle: {
-            ...padding.px16,
+            ...padding.px8,
             ...alignItems.itemsCenter,
             ...display.flex,
             ...flexDirection.flexRow,
@@ -45,7 +42,7 @@ const TabBar = () => {
             ...borderRadius.roundedfull,
             ...margin.m2,
             ...height.h16,
-            ...backgroundColor.gray300,
+            ...backgroundColor.gray200,
             ...position.absolute,
             ...topRightBottomLeft.bottom0,
             ...topRightBottomLeft.insetX0

@@ -173,7 +173,10 @@ export const height = StyleSheet.create({
 export const borderRadius = StyleSheet.create({
   roundedfull: {
     borderRadius: 9999
-  }
+  },
+  roundedlg: {
+    borderRadius: 8
+  },
 });
 export const display = StyleSheet.create({
   flex: {
@@ -202,7 +205,19 @@ export const size = StyleSheet.create({
   size40: {
     width: 160,
     height: 160
-  }
+  },
+  size44: {
+    width: 176,
+    height: 176
+  },
+  size1_2: {
+    width: "50%",
+    height: "50%"
+  },
+  sizeAuto: {
+    width: "auto",
+    height: "auto"
+  },
 });
 export const gap = StyleSheet.create({
   gap2: {
