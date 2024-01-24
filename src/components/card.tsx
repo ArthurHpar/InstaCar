@@ -8,8 +8,10 @@ import { backgroundColor, position, topRightBottomLeft, height, padding, margin,
 
 function Card() {
    return (<>
-        <Image source={require('../../public/Lotus-Evija.jpg')} style={{height: 400, width: 400}} />
+        <Image source={require('../../public/Lotus-Evija.jpg')} style={{height: 400, width: 400}}>
         <Text>SUCTION CUP CAR</Text>
+        </Image>
+        
     </>)
 };
 export default Card;
