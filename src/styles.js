@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const textColor = StyleSheet.create({
+export const textColor = StyleSheet.create({
   gray50: {
     color: "#f9fafb"
   },
@@ -35,7 +35,7 @@ const textColor = StyleSheet.create({
     color: "#030712"
   }
 });
-const backgroundColor = StyleSheet.create({
+export const backgroundColor = StyleSheet.create({
   gray50: {
     backgroundColor: "#f9fafb"
   },
@@ -103,13 +103,13 @@ const backgroundColor = StyleSheet.create({
     backgroundColor: "#172554"
   }
 });
-const position = StyleSheet.create({
+export const position = StyleSheet.create({
   fixed: { position: "fixed" },
   absolute: { position: "absolute" },
   relative: { position: "relative" },
   sticky: { position: "sticky" }
 });
-const topRightBottomLeft = StyleSheet.create({
+export const topRightBottomLeft = StyleSheet.create({
   bottom0: {
     bottom: 0
   },
@@ -118,7 +118,7 @@ const topRightBottomLeft = StyleSheet.create({
     right: 0
   }
 });
-const margin = StyleSheet.create({
+export const margin = StyleSheet.create({
   m1: {
     margin: 4
   },
@@ -126,7 +126,7 @@ const margin = StyleSheet.create({
     margin: 8
   }
 });
-const padding = StyleSheet.create({
+export const padding = StyleSheet.create({
   p1: {
     padding: 4
   },
@@ -141,6 +141,10 @@ const padding = StyleSheet.create({
     paddingTop: 112,
     paddingBottom: 112
   },
+  px8: {
+    paddingLeft: 32,
+    paddingRight: 32
+  },
   px16: {
     paddingLeft: 64,
     paddingRight: 64
@@ -148,14 +152,14 @@ const padding = StyleSheet.create({
   px28: {
     paddingLeft: 112,
     paddingRight: 112
-  },
+  }
 });
-const width = StyleSheet.create({
+export const width = StyleSheet.create({
   wfull: {
     width: "100%"
   }
 });
-const height = StyleSheet.create({
+export const height = StyleSheet.create({
   hfull: {
     height: "100%"
   },
@@ -166,17 +170,20 @@ const height = StyleSheet.create({
     height: 64
   }
 });
-const borderRadius = StyleSheet.create({
+export const borderRadius = StyleSheet.create({
   roundedfull: {
     borderRadius: 9999
-  }
+  },
+  roundedlg: {
+    borderRadius: 8
+  },
 });
-const display = StyleSheet.create({
+export const display = StyleSheet.create({
   flex: {
     flex: 1
   }
 });
-const flexDirection = StyleSheet.create({
+export const flexDirection = StyleSheet.create({
   flexCol: {
     flexDirection: "column"
   },
@@ -184,35 +191,36 @@ const flexDirection = StyleSheet.create({
     flexDirection: "row"
   }
 });
-const justifyContent = StyleSheet.create({
+export const justifyContent = StyleSheet.create({
   justifyBetween: {
     justifyContent: "space-between"
   }
 });
-const alignItems = StyleSheet.create({
+export const alignItems = StyleSheet.create({
   itemsCenter: {
     alignItems: "center"
   }
 });
-const teste = StyleSheet.create({
-  full: {
-    activeTintColor: 'blue',
+export const size = StyleSheet.create({
+  size40: {
+    width: 160,
+    height: 160
+  },
+  size44: {
+    width: 176,
+    height: 176
+  },
+  size1_2: {
+    width: "50%",
+    height: "50%"
+  },
+  sizeAuto: {
+    width: "auto",
+    height: "auto"
+  },
+});
+export const gap = StyleSheet.create({
+  gap2: {
+    gap: 8
   }
 });
-
-export {
-  backgroundColor,
-  position,
-  topRightBottomLeft,
-  width,
-  height,
-  padding,
-  margin,
-  borderRadius,
-  display,
-  flexDirection,
-  justifyContent,
-  alignItems,
-  textColor,
-  teste
-};
