@@ -55,7 +55,7 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <ScrollView>
+    // <ScrollView>
       <View
         style={[
           padding.p2,
@@ -80,10 +80,10 @@ const HomeScreen = () => {
         <FlatList
           data={carData}
           keyExtractor={item => item.id.toString()}
-          renderItem={({ item }) => <Post car={item}  />}
+          renderItem={({ item }) => <Post car={item} />}
         />
       </View>
-    </ScrollView>
+    /* // </ScrollView> */
   );
 };
 

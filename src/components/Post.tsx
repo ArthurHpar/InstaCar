@@ -26,12 +26,15 @@ import {
   boxShadow,
   boxShadowColor,
   borderColor,
-  opacity
+  opacity,
+  textColor,
+  fontWeight
 } from "../styles";
 
-export const Post = ({car}) => {
+export const Post = ({ car }) => {
   return (
-    <View style={[display.flex, gap.gap2, flexDirection.flexCol, margin.mb2]}>
+    <View
+      style={[display.flex, gap.gap2, flexDirection.flexCol, margin.mb2]}>
       <View
         style={[
           padding.p2,
@@ -57,18 +60,26 @@ export const Post = ({car}) => {
               size.size10,
               backgroundColor.blue600,
               borderRadius.roundedfull
-            ]}></View>
+            ]}>
+            <Image
+              source={car?.Logo && { uri: car.Logo }}
+              style={{
+                ...height.hfull,
+                ...width.wfull,
+                ...borderRadius.roundedlg
+              }}
+            />
+          </View>
           <Text>{car.Brand}</Text>
         </View>
-        <View
-          style={[
-            width.wfull,
-            height.h80,
-            position.relative
-          ]}>
+        <View style={[width.wfull, height.h80, position.relative]}>
           <Image
-            source={{ uri: car?.Image }}
-            style={{ ...height.hfull, ...width.wfull, ...borderRadius.roundedlg }}
+            source={car?.Image && { uri: car.Image }}
+            style={{
+              ...height.hfull,
+              ...width.wfull,
+              ...borderRadius.roundedlg
+            }}
           />
           <Text
             style={[
@@ -76,10 +87,12 @@ export const Post = ({car}) => {
               topRightBottomLeft.left0,
               topRightBottomLeft.bottom0,
               padding.p2,
-              backgroundColor.gray400,
+              backgroundColor.blue400,
               margin.m2,
+              textColor.gray800,
               borderRadius.roundedlg,
-              opacity.opacity75
+              opacity.opacity75,
+              fontWeight.fontBold
             ]}>
             {car.name}
           </Text>

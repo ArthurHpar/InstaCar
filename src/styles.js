@@ -425,3 +425,8 @@ export const opacity = StyleSheet.create({
     opacity: 0.75
   },
 });
+export const fontWeight = StyleSheet.create({
+  fontBold: {
+    fontWeight: 700
+  },
+});
