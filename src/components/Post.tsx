@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, Text, View } from "react-native";
+import { Button, Image, ScrollView, Text, View } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import {
   faBolt,
@@ -29,9 +29,9 @@ import {
   opacity
 } from "../styles";
 
-export const Post = () => {
+export const Post = ({car}) => {
   return (
-    <View style={[display.flex, gap.gap2, flexDirection.flexCol]}>
+    <View style={[display.flex, gap.gap2, flexDirection.flexCol, margin.mb2]}>
       <View
         style={[
           padding.p2,
@@ -58,19 +58,33 @@ export const Post = () => {
               backgroundColor.blue600,
               borderRadius.roundedfull
             ]}></View>
-          <Text>teste</Text>
+          <Text>{car.Brand}</Text>
         </View>
         <View
           style={[
             width.wfull,
             height.h80,
-            backgroundColor.blue600,
-            borderRadius.roundedlg,
             position.relative
-            ,
           ]}>
-          <Text style={[position.absolute, topRightBottomLeft.left0, topRightBottomLeft.bottom0, padding.p2, backgroundColor.gray400, margin.m2, borderRadius.roundedlg, opacity.opacity75]}>teste</Text>
+          <Image
+            source={{ uri: car?.Image }}
+            style={{ ...height.hfull, ...width.wfull, ...borderRadius.roundedlg }}
+          />
+          <Text
+            style={[
+              position.absolute,
+              topRightBottomLeft.left0,
+              topRightBottomLeft.bottom0,
+              padding.p2,
+              backgroundColor.gray400,
+              margin.m2,
+              borderRadius.roundedlg,
+              opacity.opacity75
+            ]}>
+            {car.name}
+          </Text>
         </View>
+        <Button title='Saiba Mais'></Button>
       </View>
     </View>
   );

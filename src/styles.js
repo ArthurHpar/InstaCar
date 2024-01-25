@@ -266,7 +266,10 @@ export const margin = StyleSheet.create({
   },
   m2: {
     margin: 8
-  }
+  },
+  mb2: {
+    marginBottom: 8
+  },
 });
 export const padding = StyleSheet.create({
   p1: {

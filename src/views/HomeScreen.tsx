@@ -57,25 +57,33 @@ const HomeScreen = () => {
   return (
     <ScrollView>
       <View
-        style={[padding.p2, display.flex, gap.gap2, flexDirection.flexCol, backgroundColor.gray50, height.hfull]}>
-        <Post />
+        style={[
+          padding.p2,
+          display.flex,
+          gap.gap2,
+          flexDirection.flexCol,
+          backgroundColor.gray50,
+          height.hfull
+        ]}>
+        {/* <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={brandData}
+          keyExtractor={item => item.Brand.toString()}
+          renderItem={({ item }) => (
+            <Image
+              source={{ uri: item?.Image }}
+              style={{ height: 50, width: 50, margin: 4, borderRadius: 30 }}
+            />
+          )}
+        /> */}
+        <FlatList
+          data={carData}
+          keyExtractor={item => item.id.toString()}
+          renderItem={({ item }) => <Post car={item}  />}
+        />
       </View>
     </ScrollView>
-    // <View style={{alignItems:"center"}}>
-    //   <FlatList
-    //     horizontal
-    //     showsHorizontalScrollIndicator={false}
-
-    //     data={brandData}
-    //     keyExtractor={(item) => item.Brand.toString()}
-    //     renderItem={({ item }) => <Image source={{ uri: item?.Image }} style={{height: 50, width: 50, margin: 4, borderRadius: 30}} />}
-    //   />
-    //   <FlatList
-    //     data={carData}
-    //     keyExtractor={(item) => item.id.toString()}
-    //     renderItem={({ item }) => <Card car={item} />}
-    //   />
-    // </View>
   );
 };
 
