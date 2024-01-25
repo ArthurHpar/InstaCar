@@ -97,7 +97,7 @@ export const Post = ({ car }) => {
             {car.name}
           </Text>
         </View>
-        <Button title='Saiba Mais'></Button>
+        {/* <Button title='Saiba Mais' style={[]}></Button> */}
       </View>
     </View>
   );
