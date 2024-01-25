@@ -19,8 +19,19 @@ export async function Search() {
         return dadosDeCarros.data
     }
     catch (error){
-        Alert.alert('Houve um erro ao buscar os dados', error)
-        console.log('Houve um erro ao buscar os dados', error)
+        Alert.alert('Houve um erro ao buscar os dados dos carros: ', error)
+        console.log('Houve um erro ao buscar os dados dos carros: ', error)
+        return {}
+    }
+  }
+  export async function dadosMarcas(){
+    try{
+        const dadosDeCarros = await api.get('/Companies');
+        return dadosDeCarros.data
+    }
+    catch (error){
+        Alert.alert('Houve um erro ao buscar os dados das marcas: ', error)
+        console.log('Houve um erro ao buscar os dados das marcas: ', error)
         return {}
     }
   }
