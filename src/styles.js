@@ -269,7 +269,7 @@ export const margin = StyleSheet.create({
   },
   mb2: {
     marginBottom: 8
-  },
+  }
 });
 export const padding = StyleSheet.create({
   p1: {
@@ -313,6 +313,9 @@ export const width = StyleSheet.create({
 export const height = StyleSheet.create({
   hfull: {
     height: "100%"
+  },
+  hauto: {
+    height: "auto"
   },
   h8: {
     height: 32
@@ -398,6 +401,9 @@ export const borderWidth = StyleSheet.create({
     borderLeftWidth: 2,
     borderRightWidth: 2
   },
+  borderb2: {
+    borderBottomWidth: 2
+  },
   borderY2: {
     borderTopWidth: 2,
     borderBottomWidth: 2
@@ -429,10 +435,10 @@ export const opacity = StyleSheet.create({
   },
   opacity75: {
     opacity: 0.75
-  },
+  }
 });
 export const fontWeight = StyleSheet.create({
   fontBold: {
     fontWeight: 700
-  },
+  }
 });

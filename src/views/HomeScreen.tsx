@@ -14,6 +14,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
 import {
   backgroundColor,
+  borderColor,
+  borderWidth,
   display,
   flexDirection,
   gap,
@@ -23,7 +25,8 @@ import {
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Card from "../components/card";
 import { dadosMarcas, dadoArray } from "../../fetchData";
-import { Post } from "../components/Post";
+import PostCar from "../components/PostCar";
+import BrandCar from "../components/BrandCar";
 
 const Tab = createBottomTabNavigator();
 
@@ -55,35 +58,34 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    // <ScrollView>
-      <View
-        style={[
-          padding.p2,
-          display.flex,
-          gap.gap2,
-          flexDirection.flexCol,
-          backgroundColor.gray50,
-          height.hfull
-        ]}>
-        { <FlatList
+    <View
+      style={[
+        display.flex,
+        gap.gap2,
+        flexDirection.flexCol,
+        backgroundColor.gray50,
+        height.hfull
+      ]}>
+      <View>
+        <FlatList
+          style={[borderWidth.borderb2, padding.p2, borderColor.gray300]}
           horizontal
           showsHorizontalScrollIndicator={false}
           data={brandData}
           keyExtractor={item => item.Brand.toString()}
-          renderItem={({ item }) => (
-            <Image
-              source={{ uri: item?.Image }}
-              style={{ height: 50, width: 50, margin: 4, borderRadius: 30 }}
-            />
-          )}
-        /> }
-        <FlatList
-          data={carData}
-          keyExtractor={item => item.id.toString()}
-          renderItem={({ item }) => <Post car={item} />}
+          renderItem={({ item }) => <BrandCar car={item} />}
         />
       </View>
-    /* // </ScrollView> */
+      
+      <View>
+        <FlatList
+          style={[padding.p2]}
+          data={carData}
+          keyExtractor={item => item.id.toString()}
+          renderItem={({ item }) => <PostCar car={item} />}
+        />
+      </View>
+    </View>
   );
 };
 
