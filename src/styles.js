@@ -278,6 +278,12 @@ export const padding = StyleSheet.create({
   p2: {
     padding: 8
   },
+  p3: {
+    padding: 12
+  },
+  p4: {
+    padding: 16
+  },
   py2: {
     paddingTop: 8,
     paddingBottom: 8

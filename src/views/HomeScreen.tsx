@@ -65,7 +65,7 @@ const HomeScreen = () => {
           backgroundColor.gray50,
           height.hfull
         ]}>
-        {/* <FlatList
+        { <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
           data={brandData}
@@ -76,7 +76,7 @@ const HomeScreen = () => {
               style={{ height: 50, width: 50, margin: 4, borderRadius: 30 }}
             />
           )}
-        /> */}
+        /> }
         <FlatList
           data={carData}
           keyExtractor={item => item.id.toString()}

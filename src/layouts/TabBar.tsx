@@ -31,7 +31,7 @@ const Tab = createBottomTabNavigator();
 const TabBar = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator
+      <Tab.Navigator 
         screenOptions={({ route }) => ({
           tabBarStyle: {
             ...padding.px8,
@@ -73,10 +73,10 @@ const TabBar = () => {
           },
           tabBarLabel: () => null
         })}>
-        <Tab.Screen name='Home' component={HomeScreen} />
-        <Tab.Screen name='Bolt' component={BoltScreen} />
-        <Tab.Screen name='Search' component={SearchScreen} />
-        <Tab.Screen name='Profile' component={ProfileScreen} />
+        <Tab.Screen name='Home' component={HomeScreen} options={{headerShown: false}}/>
+        <Tab.Screen name='Bolt' component={BoltScreen} options={{headerShown: false}} />
+        <Tab.Screen name='Search' component={SearchScreen} options={{headerShown: false}} />
+        <Tab.Screen name='Profile' component={ProfileScreen} options={{headerShown: false}} />
       </Tab.Navigator>
     </NavigationContainer>
   );
