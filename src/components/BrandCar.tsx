@@ -1,28 +1,12 @@
-import React, { useState } from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import React from "react";
+import { Image, Text, View } from "react-native";
 import {
-  backgroundColor,
-  position,
-  topRightBottomLeft,
-  height,
   padding,
-  margin,
-  borderRadius,
   display,
-  flexDirection,
   alignItems,
-  size,
-  gap,
-  width,
-  borderWidth,
-  boxShadow,
-  boxShadowColor,
-  borderColor,
-  opacity,
   textColor,
   fontWeight
 } from "../styles";
-import FlipCard from "react-native-flip-card";
 
 const PostCar = ({ car }) => {
   return (

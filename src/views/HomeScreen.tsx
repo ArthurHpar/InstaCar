@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
   View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  Button,
-  TouchableOpacity,
   FlatList,
-  Image,
-  ScrollView
 } from "react-native";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faBolt } from "@fortawesome/free-solid-svg-icons";
 import {
   backgroundColor,
   borderColor,
@@ -23,7 +14,6 @@ import {
   padding
 } from "../styles";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Card from "../components/card";
 import { dadosMarcas, dadoArray } from "../../fetchData";
 import PostCar from "../components/PostCar";
 import BrandCar from "../components/BrandCar";
