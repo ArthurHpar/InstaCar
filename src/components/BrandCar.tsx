@@ -26,7 +26,7 @@ import FlipCard from "react-native-flip-card";
 
 const PostCar = ({ car }) => {
   return (
-    <View style={[display.flex, alignItems.itemsCenter]}>
+    <View style={[display.flex, alignItems.itemsCenter, padding.p2]}>
       <Image
         source={{ uri: car?.Image }}
         style={{ height: 50, width: 50, margin: 4, borderRadius: 30,  }}

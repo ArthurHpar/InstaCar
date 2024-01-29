@@ -68,7 +68,7 @@ const HomeScreen = () => {
       ]}>
       <View>
         <FlatList
-          style={[borderWidth.borderb2, padding.p2, borderColor.gray300]}
+          style={[borderWidth.borderb2, borderColor.gray300]}
           horizontal
           showsHorizontalScrollIndicator={false}
           data={brandData}
