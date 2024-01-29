@@ -1,16 +1,44 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
-function Screen({ car }) {
+import { View, Image, StyleSheet, Dimensions, Text } from "react-native";
 
-    return (<View style={{flex:1}}>
-        <Image source={{ uri: car?.Image }} style={{ width: '100%', height: 640 }} />
-        <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", margin: 4, marginBottom: 124 }}>
-            <View>
-                <Text>{car.name}</Text>
-                <Text>{car.Brand}</Text>
-            </View>
-            <Image source={{ uri: car.Logo }} style={{height: 50, width: 50, margin: 4, borderRadius: 30}} />
-        </View>
-    </View>)
+const larguraDaTela = Dimensions.get("window").width;
+const alturaDaTela = Dimensions.get("window").height;
+
+const InfiniCard = ({ car }) => {
+  return (
+    <View style={styles.container}>
+      <Image source={{ uri: car?.Image }} style={styles.imagem} />
+      <Text style={styles.carName}>{car.name}</Text>
+    </View>
+  );
 };
-export default Screen;
+
+const styles = StyleSheet.create({
+  container: {
+    width: larguraDaTela,
+    height: alturaDaTela,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  carName: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    padding: 8,
+    backgroundColor: "#e5e7eb",
+    margin: 8,
+    color: "#1f2937",
+    borderRadius: 8,
+    opacity: 0.75,
+    textAlign: "center",
+    fontWeight: "700"
+  },
+  imagem: {
+    width: "100%",
+    height: "100%",
+    resizeMode: "cover"
+  }
+});
+
+export default InfiniCard;

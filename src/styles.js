@@ -249,6 +249,9 @@ export const topRightBottomLeft = StyleSheet.create({
   left0: {
     left: 0
   },
+  top0: {
+    top: 0
+  },
   bottom0: {
     bottom: 0
   },
@@ -308,17 +311,29 @@ export const padding = StyleSheet.create({
 export const width = StyleSheet.create({
   wfull: {
     width: "100%"
-  }
+  },
+  w12: {
+    width: 48
+  },
 });
 export const height = StyleSheet.create({
   hfull: {
     height: "100%"
+  },
+  h2_4: {
+    height: "50%"
+  },
+  h3_4: {
+    height: "75%"
   },
   hauto: {
     height: "auto"
   },
   h8: {
     height: 32
+  },
+  h12: {
+    height: 48
   },
   h16: {
     height: 64
@@ -440,5 +455,10 @@ export const opacity = StyleSheet.create({
 export const fontWeight = StyleSheet.create({
   fontBold: {
     fontWeight: 700
+  }
+});
+export const textAlign = StyleSheet.create({
+  textCenter: {
+    textAlign: 'center'
   }
 });

@@ -1,34 +1,14 @@
 import React, { useState } from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
 import {
-  backgroundColor,
-  position,
-  topRightBottomLeft,
-  height,
-  padding,
-  margin,
-  borderRadius,
-  display,
-  flexDirection,
-  alignItems,
-  size,
-  gap,
-  width,
-  borderWidth,
-  boxShadow,
-  boxShadowColor,
-  borderColor,
-  opacity,
-  textColor,
-  fontWeight
-} from "../styles";
+  Image,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
+} from "react-native";
 import FlipCard from "react-native-flip-card";
-
-const textStyle = {
-  ...margin.m2,
-  ...textColor.gray800,
-  ...fontWeight.fontBold
-};
+import { width } from "../styles";
 
 const PostCar = ({ car }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -37,18 +17,9 @@ const PostCar = ({ car }) => {
     setIsFlipped(!isFlipped);
   };
   return (
-    <View
-      style={[display.flex, gap.gap2, flexDirection.flexCol, margin.mb2]}>
+    <View style={styles.container}>
       <FlipCard
-        style={[
-          padding.p2,
-          borderWidth.border,
-          borderRadius.roundedlg,
-          boxShadow.shadowxl,
-          boxShadowColor.blue200,
-          borderColor.gray400,
-          backgroundColor.gray200
-        ]}
+        style={styles.flipCard}
         perspective={1000}
         flipHorizontal={true}
         flipVertical={false}
@@ -56,113 +27,53 @@ const PostCar = ({ car }) => {
         clickable={true}>
         <TouchableOpacity
           onPress={flipCard}
-          style={[gap.gap2, flexDirection.flexCol, display.flex]}>
-          <View
-            style={[
-              display.flex,
-              gap.gap2,
-              flexDirection.flexRow,
-              alignItems.itemsCenter
-            ]}>
-            <View
-              style={[
-                size.size10,
-                backgroundColor.blue600,
-                borderRadius.roundedfull
-              ]}>
-              <Image
-                source={car?.Logo && { uri: car.Logo }}
-                style={{
-                  ...height.hfull,
-                  ...width.wfull,
-                  ...borderRadius.roundedlg
-                }}
-              />
-            </View>
-            <Text style={[textColor.gray800, fontWeight.fontBold]}>
-              {car.Brand}
-            </Text>
+          style={styles.touchableOpacity}>
+          <View style={styles.containerBrand}>
+            <Image
+              source={car?.Logo && { uri: car.Logo }}
+              style={styles.imageBrand}
+            />
+            <Text style={styles.textBrand}>{car.Brand}</Text>
           </View>
-          <View style={[width.wfull, height.h80, position.relative]}>
+          <View style={styles.containerCar}>
             <Image
               source={car?.Image && { uri: car.Image }}
-              style={{
-                ...height.hfull,
-                ...width.wfull,
-                ...borderRadius.roundedlg
-              }}
+              style={styles.imageCar}
             />
-            <Text
-              style={[
-                position.absolute,
-                topRightBottomLeft.left0,
-                topRightBottomLeft.bottom0,
-                padding.p2,
-                backgroundColor.blue400,
-                margin.m2,
-                textColor.gray800,
-                borderRadius.roundedlg,
-                opacity.opacity75,
-                fontWeight.fontBold
-              ]}>
-              {car.name}
-            </Text>
+            <Text style={styles.textCar}>{car.name}</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={flipCard}
-          style={[gap.gap2, flexDirection.flexCol, display.flex]}>
-          <View
-            style={[
-              display.flex,
-              gap.gap2,
-              flexDirection.flexRow,
-              alignItems.itemsCenter
-            ]}>
-            <View
-              style={[
-                size.size10,
-                backgroundColor.blue600,
-                borderRadius.roundedfull
-              ]}>
-              <Image
-                source={car?.Logo && { uri: car.Logo }}
-                style={{
-                  ...height.hfull,
-                  ...width.wfull,
-                  ...borderRadius.roundedlg
-                }}
-              />
-            </View>
-            <Text style={[textColor.gray800, fontWeight.fontBold]}>
-              {car.Brand}
-            </Text>
+          style={styles.touchableOpacity}>
+          <View style={styles.containerBrand}>
+            <Image
+              source={car?.Logo && { uri: car.Logo }}
+              style={styles.imageBrand}
+            />
+            <Text style={styles.textBrand}>{car.Brand}</Text>
           </View>
-          <View style={[width.wfull, height.h80, position.relative]}>
+          <View style={styles.containerCar}>
             <View
-              style={{
-                ...height.hfull,
-                ...width.wfull,
-                ...borderRadius.roundedlg
-              }}>
-              <Text style={[textStyle]}>Nome : {car.name}</Text>
-              <Text style={[textStyle]}>Marca : {car.Brand}</Text>
-              <Text style={[textStyle]}>
+              style={styles.imageCar}>
+              <Text style={styles.textDetailsCar}>Nome : {car.name}</Text>
+              <Text style={styles.textDetailsCar}>Marca : {car.Brand}</Text>
+              <Text style={styles.textDetailsCar}>
                 Cavalos de Potência : {car.horsepower} hp
               </Text>
-              <Text style={[textStyle]}>
+              <Text style={styles.textDetailsCar}>
                 Ano de lançamento : {car.year_of_launch}
               </Text>
-              <Text style={[textStyle]}>
+              <Text style={styles.textDetailsCar}>
                 Velocidade Máxima : {car.top_speed} mph
               </Text>
-              <Text style={[textStyle]}>
+              <Text style={styles.textDetailsCar}>
                 Força de Quebra : {car.breaking_force} N
               </Text>
-              <Text style={[textStyle]}>
+              <Text style={styles.textDetailsCar}>
                 País de Origem : {car.country_of_origin}
               </Text>
-              <Text style={[textStyle]}>
+              <Text style={styles.textDetailsCar}>
                 Último Preço Conhecido : {car.last_known_price} USD
               </Text>
             </View>
@@ -172,4 +83,81 @@ const PostCar = ({ car }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    gap: 8,
+    flexDirection: "column",
+    marginBottom: 8
+  },
+  flipCard: {
+    padding: 8,
+    borderWidth: 1,
+    borderRadius: 8,
+    shadowColor: "#bfdbfe",
+    borderColor: "#9ca3af",
+    backgroundColor: "#e5e7eb",
+    ...Platform.select({
+      ios: {
+        shadowColor: "rgb(0 0 0 / 0.1)",
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.8,
+        shadowRadius: 10
+      },
+      android: {
+        elevation: 5
+      }
+    })
+  },
+  touchableOpacity: {
+    gap: 8,
+    flexDirection: "column",
+    flex: 1
+  },
+  containerBrand: {
+    flex: 1,
+    gap: 8,
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  containerCar: {
+    width: "100%",
+    height: 320,
+    position: "relative"
+  },
+  imageBrand: {
+    width: 40,
+    height: 40,
+    borderRadius: 9999
+  },
+  imageCar: {
+    height: "100%",
+    width: "100%",
+    borderRadius: 8
+  },
+  textBrand: {
+    color: "#1f2937",
+    fontWeight: "700"
+  },
+  textCar: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    padding: 8,
+    backgroundColor: "#e5e7eb",
+    margin: 8,
+    color: "#1f2937",
+    borderRadius: 8,
+    opacity: 0.75,
+    textAlign: "center",
+    fontWeight: "700"
+  },
+  textDetailsCar: {
+    margin: 8,
+    color: "#1f2937",
+    fontWeight: "700"
+  },
+});
 export default PostCar;

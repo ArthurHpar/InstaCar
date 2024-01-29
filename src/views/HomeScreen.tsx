@@ -13,12 +13,9 @@ import {
   height,
   padding
 } from "../styles";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { dadosMarcas, dadoArray } from "../../fetchData";
 import PostCar from "../components/PostCar";
 import BrandCar from "../components/BrandCar";
-
-const Tab = createBottomTabNavigator();
 
 const HomeScreen = () => {
   const [carData, setCarData] = useState([]);
