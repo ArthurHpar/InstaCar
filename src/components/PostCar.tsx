@@ -54,8 +54,7 @@ const PostCar = ({ car }) => {
             <Text style={styles.textBrand}>{car.Brand}</Text>
           </View>
           <View style={styles.containerCar}>
-            <View
-              style={styles.imageCar}>
+            <View style={styles.imageCar}>
               <Text style={styles.textDetailsCar}>Nome : {car.name}</Text>
               <Text style={styles.textDetailsCar}>Marca : {car.Brand}</Text>
               <Text style={styles.textDetailsCar}>
@@ -158,6 +157,6 @@ const styles = StyleSheet.create({
     margin: 8,
     color: "#1f2937",
     fontWeight: "700"
-  },
+  }
 });
 export default PostCar;

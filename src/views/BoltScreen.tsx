@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, Dimensions } from "react-native";
+import { FlatList, Dimensions, StyleSheet } from "react-native";
 import { dadoArray } from "../../fetchData";
 import InfiniCard from "../components/InfiniCard";
 
@@ -25,16 +25,20 @@ const BoltScreen = () => {
 
   return (
     <FlatList
-      style={{ flex: 1 }}
+      style={styles.flatListCar}
       snapToInterval={screenHeight}
-      snapToAlignment="start"
-      decelerationRate="fast"
+      snapToAlignment='start'
+      decelerationRate='fast'
       showsVerticalScrollIndicator={false}
       data={carData}
-      keyExtractor={(item) => item.id.toString()}
+      keyExtractor={item => item.id.toString()}
       renderItem={renderItem}
     />
   );
 };
-
+const styles = StyleSheet.create({
+  flatListCar: {
+    flex: 1
+  }
+});
 export default BoltScreen;

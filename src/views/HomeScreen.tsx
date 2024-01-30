@@ -1,18 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  View,
-  FlatList,
-} from "react-native";
-import {
-  backgroundColor,
-  borderColor,
-  borderWidth,
-  display,
-  flexDirection,
-  gap,
-  height,
-  padding
-} from "../styles";
+import { View, FlatList, StyleSheet } from "react-native";
 import { dadosMarcas, dadoArray } from "../../fetchData";
 import PostCar from "../components/PostCar";
 import BrandCar from "../components/BrandCar";
@@ -45,17 +32,10 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <View
-      style={[
-        display.flex,
-        gap.gap2,
-        flexDirection.flexCol,
-        backgroundColor.gray50,
-        height.hfull
-      ]}>
+    <View style={styles.container}>
       <View>
         <FlatList
-          style={[borderWidth.borderb2, borderColor.gray300]}
+          style={styles.flatListBrand}
           horizontal
           showsHorizontalScrollIndicator={false}
           data={brandData}
@@ -63,10 +43,10 @@ const HomeScreen = () => {
           renderItem={({ item }) => <BrandCar car={item} />}
         />
       </View>
-      
+
       <View>
         <FlatList
-          style={[padding.p2]}
+          style={styles.flatListCar}
           data={carData}
           keyExtractor={item => item.id.toString()}
           renderItem={({ item }) => <PostCar car={item} />}
@@ -75,5 +55,20 @@ const HomeScreen = () => {
     </View>
   );
 };
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    gap: 8,
+    flexDirection: "column",
+    backgroundColor: "#f9fafb",
+    height: "100%"
+  },
+  flatListBrand: {
+    borderBottomWidth: 2,
+    borderColor: "#d1d5db"
+  },
+  flatListCar: {
+    padding: 8
+  }
+});
 export default HomeScreen;
